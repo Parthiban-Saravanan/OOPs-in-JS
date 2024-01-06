@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Person Details</title>
+</head>
+<body>
+
+<script>
+    // Person class definition
+    class Person {
+        firstName;
+        lastName;
+        age;
+        gender;
+        address;
+
+        constructor(personData) {
+            this.firstName = personData.firstName;
+            this.lastName = personData.lastName;
+            this.age = personData.age;
+            this.gender = personData.gender;
+            this.address = personData.address;
+        }
+
+        getDetails() {
+            console.log(`Name: ${this.firstName} ${this.lastName}`);
+            console.log(`Age: ${this.age}`);
+            console.log(`Gender: ${this.gender}`);
+            console.log(`Address: ${this.address}`);
+        }
+    }
+
+    // Example usage
+    const personData = {
+        firstName: "John",
+        lastName: "Doe",
+        age: 25,
+        gender: "Male",
+        address: "123 Main Street"
+    };
+
+    const person = new Person(personData);
+    person.getDetails();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uber Price Calculator</title>
+</head>
+<body>
+
+<script>
+    // UberPriceCalculator class definition
+    class UberPriceCalculator {
+        baseFare;
+        distanceRate;
+        timeRate;
+
+        constructor(priceConfig) {
+            this.baseFare = priceConfig.baseFare;
+            this.distanceRate = priceConfig.distanceRate;
+            this.timeRate = priceConfig.timeRate;
+        }
+
+        calculatePrice(distance, time) {
+            const fare = this.baseFare + (distance * this.distanceRate) + (time * this.timeRate);
+            return fare;
+        }
+    }
+
+    // Example usage
+    const priceConfig = {
+        baseFare: 5,
+        distanceRate: 2,
+        timeRate: 0.5
+    };
+
+    const uberCalculator = new UberPriceCalculator(priceConfig);
+    const distanceTraveled = 10; // in miles
+    const timeSpent = 20; // in minutes
+
+    const totalFare = uberCalculator.calculatePrice(distanceTraveled, timeSpent);
+    console.log(`Uber Price: $${totalFare.toFixed(2)}`);
+</script>
+
+</body>
+</html>
